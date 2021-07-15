@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HomeLibraryApp.Models.booksRead>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Read Books</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Reader
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.book.Title)
+        </th>
+        <th>
+            Date Read
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.reader.FirstName) @Html.DisplayFor(modelItem => item.reader.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.book.author.FirstName) @Html.DisplayFor(modelItem => item.book.author.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.book.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateRead)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.BooksRead_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BooksRead_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BooksRead_id })
+    </td>
+</tr>
+}
+
+</table>

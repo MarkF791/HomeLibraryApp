@@ -1,0 +1,43 @@
+﻿@model HomeLibraryApp.Models.booksRead
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Read Books</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRead)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRead)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.book.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.book.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reader.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reader.FirstName)
+        </dd>
+
+    </dl>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BooksRead_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
