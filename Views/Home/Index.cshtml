@@ -9,30 +9,28 @@
 </div>
 
 <div>
-    @Html.ActionLink("List of Authors", "Index", "Authors")<br />
-    @Html.ActionLink("List of Books", "Index", "Books")<br />
+    <br />
+    <br />
     @Html.ActionLink("List of Readers", "Index", "Readers")<br />
     @Html.ActionLink("List of Read Books", "Index", "BooksReads")
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h3>Getting started, Add Readers</h3>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            The first stage to set up the app is to add the readers names who will be using this app. Click the button below to add readers.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Add Readers", "Index", "Readers") </a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h3>Add Authors</h3>
+        <p>Click the butto below to add authors. Once the authors are added proceed to the next stage. Click the button below to add authors.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Add Authors", "Index", "Authors")</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Add Books</h2>
+        <p>Once you have added authors you are ready to add books! You can add title, description and ISBN. Click the button below to add books.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Add Books", "Index", "Books")</a></p>
     </div>
 </div>
