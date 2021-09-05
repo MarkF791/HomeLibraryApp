@@ -17,7 +17,7 @@ namespace HomeLibraryApp.Controllers
         // GET: Books
         public ActionResult Index()
         {
-            var books = db.books.Include(b => b.author);
+            var books = db.books.OrderBy(a => a.author.LastName).Include(b => b.author);
             return View(books.ToList());
         }
 
@@ -57,7 +57,7 @@ namespace HomeLibraryApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", book.Author_id);
+            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", "LastName", book.Author_id);
             return View(book);
         }
 
@@ -73,7 +73,7 @@ namespace HomeLibraryApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", book.Author_id);
+            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", "LastName", book.Author_id);
             return View(book);
         }
 
@@ -90,7 +90,7 @@ namespace HomeLibraryApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", book.Author_id);
+            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", "LastName", book.Author_id);
             return View(book);
         }
 

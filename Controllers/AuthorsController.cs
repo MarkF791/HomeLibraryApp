@@ -46,7 +46,7 @@ namespace HomeLibraryApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Author_id,FirstName,LastName,MiddleName")] author author)
+        public ActionResult Create([Bind(Include = "Author_id, FirstName, LastName, MiddleName")] author author)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace HomeLibraryApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Author_id,FirstName,LastName,MiddleName")] author author)
+        public ActionResult Edit([Bind(Include = "Author_id, FirstName, LastName, MiddleName")] author author)
         {
             if (ModelState.IsValid)
             {

@@ -17,7 +17,7 @@ namespace HomeLibraryApp.Controllers
         // GET: BooksReads
         public ActionResult Index()
         {
-            var booksReads = db.booksReads.Include(b => b.book).Include(b => b.reader);
+            var booksReads = db.booksReads.OrderBy(a => a.book.author.LastName).Include(b => b.book).Include(b => b.reader);
             return View(booksReads.ToList());
         }
 
