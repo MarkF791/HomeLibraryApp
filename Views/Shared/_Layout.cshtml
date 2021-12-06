@@ -27,11 +27,13 @@
                     <li>@Html.ActionLink("Readers", "Index", "Readers")</li>
                 </ul>
             </div>
+
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
+            @RenderBody()
+    </div>
+    <div>
         <footer>
             <p>&copy; @DateTime.Now.Year - MF Solutions</p>
         </footer>

@@ -17,7 +17,7 @@ namespace HomeLibraryApp.Controllers
         // GET: BooksReads
         public ActionResult Index()
         {
-            var booksReads = db.booksReads.OrderBy(a => a.book.author.LastName).Include(b => b.book).Include(b => b.reader);
+            var booksReads = db.booksReads.OrderBy(a => a.reader.FirstName).Include(b => b.book).Include(b => b.reader);
             return View(booksReads.ToList());
         }
 
@@ -39,8 +39,8 @@ namespace HomeLibraryApp.Controllers
         // GET: BooksReads/Create
         public ActionResult Create()
         {
-            ViewBag.Book_id = new SelectList(db.books, "Book_id", "Title");
-            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "FirstName");
+            ViewBag.Book_id = new SelectList(db.books.OrderBy(a => a.Title), "Book_id", "Title");
+            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "ReaderFullName");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace HomeLibraryApp.Controllers
             }
 
             ViewBag.Book_id = new SelectList(db.books, "Book_id", "Title", booksRead.Book_id);
-            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "FirstName", booksRead.Reader_id);
+            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "ReaderFullName", booksRead.Reader_id);
             return View(booksRead);
         }
 
@@ -76,7 +76,7 @@ namespace HomeLibraryApp.Controllers
                 return HttpNotFound();
             }
             ViewBag.Book_id = new SelectList(db.books, "Book_id", "Title", booksRead.Book_id);
-            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "FirstName", booksRead.Reader_id);
+            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "ReaderFullName", booksRead.Reader_id);
             return View(booksRead);
         }
 
@@ -85,7 +85,7 @@ namespace HomeLibraryApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BooksRead_id,Book_id,Reader_id,DateRead")] booksRead booksRead)
+        public ActionResult Edit([Bind(Include = "BooksRead_id,Book_id,Reader_id,ReadDate")] booksRead booksRead)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace HomeLibraryApp.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Book_id = new SelectList(db.books, "Book_id", "Title", booksRead.Book_id);
-            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "FirstName", booksRead.Reader_id);
+            ViewBag.Reader_id = new SelectList(db.readers, "Reader_id", "ReaderFullName", booksRead.Reader_id);
             return View(booksRead);
         }
 

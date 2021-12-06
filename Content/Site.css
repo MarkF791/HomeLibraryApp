@@ -1,6 +1,41 @@
-﻿body {
-    padding-top: 50px;
+﻿
+body {
+    background-image: url("Images/libraryBackgroundEdit.jpg");
+    padding-top: 150px;
     padding-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px 1px grey;
+}
+
+p {
+    text-shadow:2px 2px 3px white;
+}
+
+h2 {
+    text-shadow: 2px 2px 3px white;
+}
+
+h4 {
+    text-shadow: 2px 2px 3px white;
+}
+
+dl {
+    background-color: white;
+}
+
+.backgroundImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */

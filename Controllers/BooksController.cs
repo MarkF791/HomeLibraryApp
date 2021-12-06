@@ -21,6 +21,7 @@ namespace HomeLibraryApp.Controllers
             return View(books.ToList());
         }
 
+
         // GET: Books/Details/5
         public ActionResult Details(int? id)
         {
@@ -39,7 +40,7 @@ namespace HomeLibraryApp.Controllers
         // GET: Books/Create
         public ActionResult Create()
         {
-            ViewBag.Author_id = new SelectList(db.authors, "Author_id", "FirstName", "LastName");
+            ViewBag.Author_id = new SelectList(db.authors.OrderBy(x => x.LastName), "Author_id", "AuthorFullName");
             return View();
         }
 

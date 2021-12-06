@@ -30,10 +30,10 @@
 @foreach (var item in Model) {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.reader.FirstName) @Html.DisplayFor(modelItem => item.reader.LastName)
+        @Html.DisplayFor(modelItem => item.reader.ReaderFullName) 
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.book.author.FirstName) @Html.DisplayFor(modelItem => item.book.author.LastName)
+        @Html.DisplayFor(modelItem => item.book.author.AuthorFullName) 
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.book.Title)

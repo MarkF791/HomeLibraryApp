@@ -15,7 +15,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.book.author.FirstName) @Html.DisplayFor(model => model.book.author.LastName)
+            @Html.DisplayFor(model => model.book.author.AuthorFullName) 
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.book.Title)
@@ -25,18 +25,18 @@
             @Html.DisplayFor(model => model.book.Title)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DateRead)
+            Date book read
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.DateRead)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.reader.FirstName)
+            Reader name
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.reader.FirstName)
+            @Html.DisplayFor(model => model.reader.ReaderFullName)
         </dd>
 
     </dl>

@@ -13,11 +13,11 @@ namespace HomeLibraryApp.Controllers
     public class AuthorsController : Controller
     {
         private MarkBookDbEntities db = new MarkBookDbEntities();
-
+     
         // GET: Authors
         public ActionResult Index()
         {
-            return View(db.authors.ToList());
+            return View(db.authors.OrderBy(a => a.LastName));
         }
 
         // GET: Authors/Details/5

@@ -4,31 +4,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Reader</h2>
+<h2>@Html.DisplayFor(model => model.ReaderFullName) </h2>
 
 <div>
-    <h4>Details</h4>
+    <h4>The table below shows the books that have been read by @Html.DisplayFor(model => model.FirstName)</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            First Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            Last Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Reader_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Author
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Date Read
+            </th>
+        </tr>
+
+
+        @foreach (var item in Model.booksReads.OrderBy(a => a.book.author.LastName))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book.author.AuthorFullName) 
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRead)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

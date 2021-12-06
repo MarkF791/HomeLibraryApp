@@ -2,28 +2,28 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Home Library App</h1>
-    <p class="lead">The Home Library App provides a simple way to catalogue your home library and keep track of which books you have read.</p>
-</div>
+    <div class="jumbotron">
+        <h1>Home Library App</h1>
+        <p class="lead">The Home Library App provides a simple way to catalogue your home library and keep track of which books you have read.</p>
+    </div>
 
 
-<div class="row">
-    <div class="col-md-4">
-        <h3>Getting started, Add Readers</h3>
-        <p>
-            The first stage to set up the app is to add the readers names who will be using this app. Click the button below to add readers.
-        </p>
-        <p><a class="btn btn-default" @Html.ActionLink("Add Readers", "Create", "Readers") </a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started, Add Readers</h2>
+            <p>
+                The first stage to set up the app is to add the readers names who will be using this app. Click the button below to add readers.
+            </p>
+            <p><a class="btn btn-default" @Html.ActionLink("Add Readers", "Create", "Readers") </a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Add Authors</h2>
+            <p>Click the button below to add authors. Once the authors are added proceed to the next stage. Click the button below to add authors.</p>
+            <p><a class="btn btn-default" @Html.ActionLink("Add Authors", "Create", "Authors")</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Add Books</h2>
+            <p>Once you have added authors you are ready to add books! You can add title, description and ISBN. Click the button below to add books.</p>
+            <p><a class="btn btn-default" @Html.ActionLink("Add Books", "Create", "Books")</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h3>Add Authors</h3>
-        <p>Click the butto below to add authors. Once the authors are added proceed to the next stage. Click the button below to add authors.</p>
-        <p><a class="btn btn-default" @Html.ActionLink("Add Authors", "Create", "Authors")</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Add Books</h2>
-        <p>Once you have added authors you are ready to add books! You can add title, description and ISBN. Click the button below to add books.</p>
-        <p><a class="btn btn-default" @Html.ActionLink("Add Books", "Create", "Books")</a></p>
-    </div>
-</div>

@@ -21,14 +21,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+            @Html.DisplayFor(modelItem => item.ReaderFullName) 
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Reader_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Reader_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Reader_id })
+            <button type="button" class="btn btn-light">@Html.ActionLink("View Read Books", "Details", new { id = item.Reader_id })</button>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Reader_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Reader_id })
         </td>
+        
     </tr>
 }
 

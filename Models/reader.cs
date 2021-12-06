@@ -23,7 +23,15 @@ namespace HomeLibraryApp.Models
         public int Reader_id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-    
+        public string ReaderFullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<booksRead> booksReads { get; set; }
     }

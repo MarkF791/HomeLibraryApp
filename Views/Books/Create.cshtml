@@ -1,7 +1,7 @@
 ﻿@model HomeLibraryApp.Models.book
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Book";
 }
 
 <h2>Add</h2>
@@ -19,7 +19,7 @@
             @Html.LabelFor(model => model.Author_id, "Author", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Author_id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Author_id, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.author, "", new { @class = "text-danger" })
             </div>
         </div>
 
